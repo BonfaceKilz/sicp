@@ -9,16 +9,21 @@
   )
 
 ;; 3 ^ 4
-;;(expt 3 4)
-;;(* 3 (expt 3 3))
-;;(* 3 (* 3 (expt 3 2)))
-;;(* 3 (* 3 (* 3 (expt 3 1))))
-;;(* 3 (* 3 (* 3 (* 3 (expt 3 0)))))
-;;(* 3 (* 3 (* 3 (* 3 1))))
-;;(* 3 (* 3 (* 3 3)))
-;;(* 3 (* 3 9))
-;;(* 3 27)
-;;81
+;; (expt 3 4)
+;; (* 3 (expt 3 3))
+;; (* 3 (* 3 (expt 3 2)))
+;; (* 3 (* 3 (* 3 (expt 3 1))))
+;; (* 3 (* 3 (* 3 (* 3 (expt 3 0)))))
+;; (* 3 (* 3 (* 3 (* 3 1))))
+;; (* 3 (* 3 (* 3 3)))
+;; (* 3 (* 3 9))
+;; (* 3 27)
+;; 81
+
+;; Comments:
+;; This is a linear recursive process
+;; This version requires 𝟅(n) steps and 𝟅(n) space
+
 
 ;; Using fast exponiantion
 (define (fast-expt b n)
@@ -39,6 +44,9 @@
 ;; (square (square 3))
 ;; (square 9)
 ;; 81
+
+;; Comments:
+;; This function has 𝟅(log(n)) order of growth both in time and space
 
 
 ;; Using a linear iterative process
@@ -61,3 +69,6 @@
 ;;(expt-iter 3 1 27)
 ;;(expt-iter 3 0 81)
 ;;81
+
+;; Comments:
+;; This version requires 𝟅(n) steps and 𝟅(1) space 

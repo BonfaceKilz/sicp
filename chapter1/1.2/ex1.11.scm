@@ -12,11 +12,11 @@
 
 
 ;; Using an iterative process
+(define (f_alt n)
+  (cond ((< n 3) n)
+	(else (f-iter 0 1 2 (- n 2)))))
 (define (f-iter a b c count)
   (if (= count 0)
       c
       (f-iter b c (+ c (* 2 b) (* 3 a)) (- count 1))))
 
-(define (f n)
-  (cond ((< n 3) n)
-	(else (f-iter 0 1 2 (- n 2)))))

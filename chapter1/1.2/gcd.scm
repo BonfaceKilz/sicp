@@ -5,3 +5,8 @@
   (if (= b 0)
       a
       (gcd b (remainder a b))))
+
+;; Comments:
+;; This procedure produces an iterative process
+;; whose number of steps grows as the logarithm of the
+;; numbers involved
