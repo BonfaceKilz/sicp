@@ -1,4 +1,5 @@
 ;; Exercise 1.1
+;; Evaluating a sequence of expressions
 
 10
 ;; prints 10

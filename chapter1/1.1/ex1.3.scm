@@ -1,19 +1,15 @@
 ;; Exercise 1.3
-(define
-  (square x)
-  (* x x)
-  )
+;; Program that takes 3 numbers as arguments and returns the
+;; sum of the squares of the two larger numbers
 
-(define
-  (sum-of-squares x y)
-  (+ (square x) (square y))
-  )
+(define (square x)
+  (* x x))
 
-
-(define
-  (largest-two-squares x y z)
+(define (sum func x y z)
   (if (>= x y)
-      (sum-of-squares x (if (>= y z) y z))
-      (sum-of-squares y (if (>= x z) x z))
-      )
-  )
+      (+ (func x)
+         (if (>= y z) (func y) (func z)))
+      (+ (func y)
+         (if (>= x z) (func x) (func z)))))
+
+(sum square 4 3 2)

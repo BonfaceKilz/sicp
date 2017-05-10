@@ -15,6 +15,7 @@
 (define (f_alt n)
   (cond ((< n 3) n)
 	(else (f-iter 0 1 2 (- n 2)))))
+
 (define (f-iter a b c count)
   (if (= count 0)
       c

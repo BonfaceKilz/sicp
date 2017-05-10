@@ -1,16 +1,21 @@
-;; This program finds the smallest integral divisor
-;; of a given number n. It does this by testing n for
-;; divisibility by successive integers starting with 2
+;; Exercise 1.23
+;; Modifying the smallest-divisor to make it more
+;; efficient by skipping even numbers greater
+;; than 2
 
 (define (square x) (* x x))
 
 (define (smallest-divisor n)
   (find-divisor n 2))
 
+(define (next n)
+  (cond ((= n 2) 3)
+        (else (+ n 2))))
+
 (define (find-divisor n test-divisor)
   (cond ((> (square test-divisor) n)n)
         ((divides? test-divisor n) test-divisor)
-        (else (find-divisor n (+ test-divisor 1)))))
+        (else (find-divisor n (next test-divisor)))))
 (define (divides? a b)
   (= (remainder b a) 0))
 

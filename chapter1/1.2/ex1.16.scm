@@ -1,6 +1,7 @@
 ;; Exercise 1.16
 ;; Designing a procedure that evolves an iterative exponentiation
 ;; process
+
 (define (fast-expt b n)
   (define (even? p)
     (= (remainder p 2) 0))

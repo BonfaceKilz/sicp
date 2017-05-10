@@ -3,13 +3,17 @@
 ;; This procedure computes the exponential of a number
 ;; modulo another number
 (define (expmod base exp m)
+  (define (even? n) (= (remainder n 2) 0))
   (cond ((= exp 0) 1)
         ((even? exp)
-         (remainder (square (expmod base (- exp 1) m))
+         (remainder (square (expmod base (- exp 2) m))
+                    m))
+        (else
+         (remainder (* base (expmod base (- exp 1) m))
                     m))))
 
 ;; The Fermat test
-(define (fermat-test)
+(define (fermat-test n)
   (define (try-it a)
     (= (expmod a n n) a))
   (try-it (+ 1 (random (- n 1)))))

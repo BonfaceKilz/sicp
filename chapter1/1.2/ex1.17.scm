@@ -1,10 +1,10 @@
 ;; Exercise 1.17
+;; Multiplication by repeated addition
 
 (define (mult a b)
   (if (= b 0)
       0
       (+ a (mult a (- b 1)))))
-
 
 (define (even? a)
   (= (remainder a 2) 0))

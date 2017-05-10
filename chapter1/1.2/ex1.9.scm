@@ -1,4 +1,7 @@
 ;; Exercise 1.9
+;; Using the substition model to analyze a procedure
+;; to find out if its iterative or recursive
+
 (define (inc x)
   (+ x 1))
 
@@ -30,8 +33,8 @@
       (+ (dec a) (inc b))))
 ;;This is an iterative process
 ;;(+ 4 5)
-;;(3 6)
-;;(2 7)
-;;(1 8)
-;;(0 9)
+;;(+ 3 6)
+;;(+ 2 7)
+;;(+ 1 8)
+;;(+ 0 9)
 ;;9

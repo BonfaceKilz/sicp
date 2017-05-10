@@ -1,4 +1,7 @@
 ;; Exercise 1.6
+;; What happens when you use this new-if to compute
+;; square roots?
+
 (define (new-if predicate then-clause else-clause)
   (cond (predicate then-clause)
 	(else else-clause)))

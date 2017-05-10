@@ -19,7 +19,7 @@
 
 ;; Normal iteration
 (define (mult-iter a counter sum)
-  (if (= counter 0)
+  (if (or (= counter 0) (= a 0))
       sum
       (mult-iter a
                  (- counter 1)
@@ -31,9 +31,9 @@
   (mult-iter a b 0))
 
 (define (mult-alt-iter a counter sum)
-  (cond ((= counter 0) sum)
+  (cond (or ((= counter 0) (= a 0)) sum)
         ((even? counter)
-         (mult-iter a
+         (mult-it a
                     (- counter 2)
                     (double (+ a (half sum)))))
         ((odd? counter)
