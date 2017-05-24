@@ -31,3 +31,11 @@
 
 (define (product-alt term a next b)
   (accumulate * 1 term a next b))
+
+
+;; Iterative form of accumulate
+(define (acc-iter combiner null-value term a next b)
+  (define (iter a result)
+    (if (< a b)
+        result
+        (acc-iter (next a) (combiner (term a) result)))))
