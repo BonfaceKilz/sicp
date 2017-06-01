@@ -4,6 +4,12 @@
 
 (define (make-interval a b) (cons a b))
 
-(define (upper-bound num) (car num))
+(define (upper-bound num)
+  (if (> (car num) (cdr num))
+      (car num)
+      (cdr num)))
 
-(define (lower-bound num) (cdr num))
+(define (lower-bound num)
+  (if (< (car num) (cdr num))
+      (car num)
+      (cdr num)))
