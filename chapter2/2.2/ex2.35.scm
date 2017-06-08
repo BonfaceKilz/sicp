@@ -1,6 +1,7 @@
 ;; Exercise 2.35
 ;; Redefining the count-leaves function
 
+(load "seq-interfaces.scm")
 (define (count-leaves t)
   (accumulate
    ;; operation
