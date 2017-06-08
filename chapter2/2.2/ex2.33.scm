@@ -1,4 +1,6 @@
 ;; Exercise 2.33
+;; Some basic list-manipulation operations as
+;; accumulations
 
 (load "seq-interfaces.scm")
 
