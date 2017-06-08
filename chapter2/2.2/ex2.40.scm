@@ -1,4 +1,6 @@
 ;; Exercise 2.40
+;; Defining unique-pairs and re-writing
+;; prime-sum-pairs with it
 
 (load "nested-mappings.scm")
 
