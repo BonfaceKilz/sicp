@@ -1,4 +1,6 @@
 # -*- mode: gitignore; -*-
+info
+*.log
 */**/.scm~
 videos
 */**/*.log

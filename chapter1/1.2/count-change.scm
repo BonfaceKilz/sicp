@@ -8,5 +8,3 @@
 			(first-denomination kinds-of-coins))
 		     kinds-of-coins)))))
 
-(define (count-change amount)
-  (cc amount 5))

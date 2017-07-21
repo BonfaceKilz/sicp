@@ -32,3 +32,10 @@
   (cond ((null? set) #f)
         ((equal? x (car set)) #t)
         (else (element-of-set? x (cdr set)))))
+
+(define sample-tree
+  (make-code-tree (make-leaf 'A 4)
+                  (make-code-tree
+                   (make-leaf 'B 2)
+                   (make-code-tree (make-leaf 'D 1)
+                                   (make-leaf 'C 1)))))
