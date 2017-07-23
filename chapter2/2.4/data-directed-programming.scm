@@ -1,5 +1,15 @@
 ;; Data-Directed Programming and Additivity
 
+(define (type-tag datum)
+  (if (pair? datum)
+      (car datum)
+      (error "Bad tagged datum: TYPE-TAG" datum)))
+
+(define (contents datum)
+  (if (pair? datum)
+      (cdr datum)
+      (error "Bad tagged datum: CONTENTS" datum)))
+
 ;; Ben's package
 (define (install-rectangular-package)
   ;; internal procedures
