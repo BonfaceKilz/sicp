@@ -1,5 +1,7 @@
 ;; Data-Directed Programming and Additivity
 
+(load "tables.scm")
+
 (define (type-tag datum)
   (if (pair? datum)
       (car datum)
@@ -40,7 +42,7 @@
   'done)
 
 ;; Alyssa's package
-(define (install-polar-packages)
+(define (install-polar-package)
   ;; internal procedures
   (define (magnitude z) (car z))
   (define (angle z) (cdr z))
