@@ -1,7 +1,5 @@
-;; Exercise 1.29
-;; Using Simpson's Rule to compute integrals
-
 (define (cube x) (* x x x))
+;;; (Exercise 1.29) --- Simpson's Rule
 
 (define (inc n) (+ n 1))
 
@@ -28,3 +26,5 @@
 ;; Tests
 (simpson cube 0 1 100)
 (simpson cube 0 1 1000)
+
+;;; Exercise 1.29 ends here
