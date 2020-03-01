@@ -32,4 +32,4 @@
 (continued-fraction-iter (lambda (i) 1.0)
                          (lambda (i) 1.0)
                          100)
-;;; Exercise 1.36 ends here
+;;; Exercise 1.37 ends here
