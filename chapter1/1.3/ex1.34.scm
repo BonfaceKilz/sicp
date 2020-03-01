@@ -1,14 +1,19 @@
-;; Exercise 1.34
+;;; (Exercise 1.34) --- Using lambda
 
-(define (f g) (g 2))
+;; Comments:
+;; (f square) -> Will be evaluated
+;; (f (lambda (z)
+;;      (* z (+ z 1)))) -> Will be evaluated
+;; (f f) -> will not be evaluated
 
-;; test
+;;; Code:
+(define (f g)
+  (g 2))
+
+;; Demo:
 (define (square x) (* x x))
-
 (f square)
 
-(f (lambda (z) (* z (+ z 1))))
-
-;; Comments
-;; (f f) -> will not compile
-;; lambda function can be use to describe an "anonymous" inner function
+(f (lambda (z)
+     (* z (+ z 1))))
+;;; Exercise 1.34 ends here
