@@ -1,25 +1,21 @@
-;; Exercise 1.46
+;;; (Exercise 1.46) --- Iterative improvement
 
-;; Iterative improvement:
-;; To compute something, we start with an initial guess
-;; for the answer, test if the answer is good enough, and
-;; otherwise improve the guess and continue the process
-;; using the improved guess as the new guess
+;; Iterative improvement: To compute something, we start with an initial guess
+;; for the answer, test if the answer is good enough, and otherwise improve the
+;; guess and continue the process using the improved guess as the new guess
 
-;; Tests
+;;; Code:
 (define (good-enough? v1 v2)
-  (define (abs x)
-    (if (< x 0) (- x) x))
-  (define tolerance 1.e-6)
-  (< (/ (abs (- v1 v2)) v2) tolerance))
+  (let ((tolerance 1.e-6))
+    (< (/ (abs (- v1 v2)) v2) tolerance)))
 
 
 (define (iterative-improve good-enough? improve-guess)
   (lambda(x)
-    (let((xim (improve-guess x)))
-     (if (good-enough? x xim)
-        xim
-        ((iterative-improve good-enough? improve-guess) xim))
+    (let((guess (improve-guess x)))
+     (if (good-enough? x guess)
+        guess
+        ((iterative-improve good-enough? improve-guess) guess))
     )))
 
 (define (sqrt x)
@@ -29,6 +25,6 @@
       (/ (+ (/ x y) y) 2))) 1.0))
 
 (define (fixed-point f first-guess)
-  ((iterative-improve
-    f
-    good-enough?) first-guess))
+  ((iterative-improve f good-enough?)
+   first-guess))
+;;; Exercise 1.46 ends here
