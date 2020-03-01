@@ -4,6 +4,7 @@
 ;; -> 1 + 1/x
 ;; The golden ratio is the constant: 1.6180327868852458
 
+;;; Code:
 (define (fixed-point f first-guess)
   "Calculating fixed points"
   (let ((tolerance 0.00001))

@@ -1,40 +1,36 @@
-;; Exercise 1.36
-;; Modifying fixed-point so that it prints
-;; the sequence of approximations it
-;; generates using the newline and display
-;; primitives
+;;; (Exercise 1.36) --- Finding solution of x^x = 1000 used fixed-point
 
-;; Calculating fixed points
-(define (positive? a)
-  (> a 0))
-(define (abs x)
-  (if (positive? x)
-      x
-      (- x)))
+;; Modifying fixed-point so that it prints the sequence of approximations it
+;; generates using the newline and display primitives
 
-(define tolerance 0.00001)
-
+;;; Code:
 (define (fixed-point f first-guess)
-  (define (close-enough? v1 v2)
-    (< (abs (- v1 v2)) tolerance))
-  (define (try guess)
-    (display guess)
-    (newline)
-    (let ((next (f guess)))
-      (if (close-enough? guess next)
-          next
-          (try next))))
-  (try first-guess)
-  )
+  "Calculating fixed points, and displaying the guesses"
+  (let ((tolerance 0.00001))
+    (define (close-enough? v1 v2)
+      (< (abs (- v1 v2)) tolerance))
 
-(define (fn1)
+    (define (try guess)
+      (display guess)
+      (newline)
+      (let ((next (f guess)))
+        (if (close-enough? guess next)
+            next
+            (try next))))
+
+    (try first-guess)))
+
+(define (fixed-point->log)
+  "Fixed point of a log function. Takes 34 steps"
   (fixed-point
    (lambda (x) (/ (log 1000) (log x)))
    10.0))
 
-(define (fn2)
+(define (fixed-point->damped-log)
+  "Fixed point of a log function with damping. Takes 11 steps"
   (define (average a b)
-    (/ (+ a b) 2))
+    (/ (+ a b) 2.0))
   (fixed-point
    (lambda(x) (average x (/ (log 1000) (log x))))
    10.0))
+;;; Exercise 1.36 ends here
