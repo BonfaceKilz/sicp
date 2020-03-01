@@ -6,6 +6,7 @@
 ;; the Di are successively 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, ...; This program
 ;; approximates e, based on Euler's expansion
 
+;;; Code:
 (define (continued-fraction n d k)
   "Calculating continued fractions using an iterative process"
   (define (iter i result)
