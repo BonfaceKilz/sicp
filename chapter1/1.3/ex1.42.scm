@@ -3,6 +3,7 @@
 ;; Let f and g be one argument functions. The composition f after g is defined
 ;; to be the function x ↦ f(g(x))
 
+;;; Code:
 (define (compose f g)
   (lambda(x)
     (f (g x))))
