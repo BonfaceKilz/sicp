@@ -21,9 +21,7 @@
 (define (mult-iter a counter sum)
   (if (or (= counter 0) (= a 0))
       sum
-      (mult-iter a
-                 (- counter 1)
-                 (+ a sum))))
+      (mult-iter a (- counter 1) (+ a sum))))
 
 ;; Logarithmic iteration
 ;; Also known as the Russian Peasant method
@@ -33,10 +31,6 @@
 (define (mult-alt-iter a counter sum)
   (cond (or ((= counter 0) (= a 0)) sum)
         ((even? counter)
-         (mult-it a
-                    (- counter 2)
-                    (double (+ a (half sum)))))
+         (mult-iter a (- counter 2) (double (+ a (half sum)))))
         ((odd? counter)
-         (mult-iter a
-                    (- counter 1)
-                    (+ a sum)))))
+         (mult-iter a (- counter 1) (+ a sum)))))
