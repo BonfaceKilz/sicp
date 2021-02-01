@@ -56,7 +56,7 @@ prime to n"
         (gcd b (remainder a b))))
 
   (filtered-accumulate (lambda (x) (= (gcd x n) 1)) ; filter
-                       ,* ; combiner
+                       * ; combiner
                        1 ; null-value
                        (lambda (x) x) ; term
                        1 ; first val
