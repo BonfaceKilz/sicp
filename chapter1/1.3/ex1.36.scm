@@ -20,17 +20,17 @@
 
     (try first-guess)))
 
-(define (fixed-point->log)
+(define (fixed-point->log n)
   "Fixed point of a log function. Takes 34 steps"
   (fixed-point
-   (lambda (x) (/ (log 1000) (log x)))
-   10.0))
+   (lambda (x) (/ (log n) (log x)))
+   4.0684))
 
-(define (fixed-point->damped-log)
+(define (fixed-point->damped-log n)
   "Fixed point of a log function with damping. Takes 11 steps"
   (define (average a b)
     (/ (+ a b) 2.0))
   (fixed-point
-   (lambda(x) (average x (/ (log 1000) (log x))))
+   (lambda(x) (average x (/ (log n) (log x))))
    10.0))
 ;;; Exercise 1.36 ends here

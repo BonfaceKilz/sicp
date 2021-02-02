@@ -10,7 +10,7 @@
     (/ (n i)
        (+ (d i)
           (if (= i k)
-              0
+              (/ (n k) (d k))
               (recurse (+ i 1))))))
   (recurse 0))
 
